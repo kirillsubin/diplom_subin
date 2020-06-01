@@ -18,3 +18,17 @@ resource "google_compute_instance" "vm_instance1" {
     }
   }
 } 
+resource "google_compute_instance" "vm_instance2" {
+ name = "${var.instance-name-2}"
+ machine_type = "${var.machine-type-2}"
+ boot_disk {
+   initialize_params {
+     image = "${var.image-2}"
+   }
+ }
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+}
